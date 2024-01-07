@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>site data</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-treemap"></script>
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  
+</head>
+<body>
+  
+    <div class="all_page">  
+
+        <!-- navbar -->
+         <div class="navbar">
+            <div><h1 class="navbar_titre">Furesta</h1></div>
+         </div>
+
+        <!-- page_1 -->
+         <div class="conteineur_page_1">
+            <div class="texte_page_1">
+                <div class="titre_page_1"><h3>Statistiques des incendies en Corse</h3></div>
+
+                <div class="description_page_1">
+                    <p>La Corse est une île méditerranéenne qui possède une grande diversité de paysages et de végétation. Parmi les richesses naturelles de la Corse, on trouve de nombreuses forêts, qui couvrent environ 40% du territoire. Ces forêts sont composées de différentes essences d’arbres, comme le chêne vert, le chêne liège, le pin maritime, le pin laricio, le hêtre, le châtaignier, etc. Chaque type de bois a ses propres caractéristiques, notamment en termes de combustibilité, de résistance au feu, de production de fumée, etc. Ces caractéristiques influencent le comportement des incendies, qui sont un risque majeur pour la Corse.</p>
+                </div>
+            </div>
+
+            <div class="image_page_1">
+                <img src="img/corse.png" alt="">
+            </div>
+         </div>
+
+         <!-- page_2 -->
+         <div class="conteineur_page_2">
+
+            <div class="titre_page_2"><h2>Graphiques</h2></div>
+
+            <div class="graphiques">
+                <h3 >Graphique des commune et de leurs essences prédominantes</h3>
+                ...
+                <!-- Styles -->
+               
+                
+                <!-- Resources -->
+                <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+                <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+                
+                <!-- Chart code -->
+                <script>
+                am5.ready(function() {
+                
+                // Create root element
+                // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                var root = am5.Root.new("chartdiv");
+                
+                // Set themes
+                // https://www.amcharts.com/docs/v5/concepts/themes/
+                root.setThemes([am5themes_Animated.new(root)]);
+                
+                var container = root.container.children.push(
+                  am5.Container.new(root, {
+                    width: am5.p100,
+                    height: am5.p100,
+                    layout: root.horizontalLayout
+                  })
+                );
+                
+                // Create main chart
+                // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+                var chart = container.children.push(
+                  am5percent.PieChart.new(root, {
+                    tooltip: am5.Tooltip.new(root, {})
+                  })
+                );
+                
+                // Create series
+                // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+                var series = chart.series.push(
+                  am5percent.PieSeries.new(root, {
+                    valueField: "value",
+                    categoryField: "category",
+                    alignLabels: false
+                  })
+                );
+                
+                series.labels.template.setAll({
+                  textType: "circular",
+                  radius: 4
+                });
+                series.ticks.template.set("visible", false);
+                series.slices.template.set("toggleKey", "none");
+                
+                // add events
+                series.slices.template.events.on("click", function(e) {
+                  selectSlice(e.target);
+                });
+                
+                // Create sub chart
+                // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+                var subChart = container.children.push(
+                  am5percent.PieChart.new(root, {
+                    radius: am5.percent(50),
+                    tooltip: am5.Tooltip.new(root, {})
+                  })
+                );
+                
+                // Create sub series
+                // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+                var subSeries = subChart.series.push(
+                  am5percent.PieSeries.new(root, {
+                    valueField: "value",
+                    categoryField: "category"
+                  })
+                );
+                
+                subSeries.data.setAll([
+                  { category: "A", value: 0 },
+                  { category: "B", value: 0 },
+                  { category: "C", value: 0 },
+                  { category: "D", value: 0 },
+                  { category: "E", value: 0 },
+                  { category: "F", value: 0 },
+                  { category: "G", value: 0 },
+                  { category: "H", value: 0 }
+                  
+                ]);
+                subSeries.slices.template.set("toggleKey", "none");
+                
+                var selectedSlice;
+                
+                series.on("startAngle", function() {
+                  updateLines();
+                });
+                
+                container.events.on("boundschanged", function() {
+                  root.events.once("frameended", function() {
+                    updateLines();
+                   })
+                });
+                
+                function updateLines() {
+                  if (selectedSlice) {
+                    var startAngle = selectedSlice.get("startAngle");
+                    var arc = selectedSlice.get("arc");
+                    var radius = selectedSlice.get("radius");
+                
+                    var x00 = radius * am5.math.cos(startAngle);
+                    var y00 = radius * am5.math.sin(startAngle);
+                
+                    var x10 = radius * am5.math.cos(startAngle + arc);
+                    var y10 = radius * am5.math.sin(startAngle + arc);
+                
+                    var subRadius = subSeries.slices.getIndex(0).get("radius");
+                    var x01 = 0;
+                    var y01 = -subRadius;
+                
+                    var x11 = 0;
+                    var y11 = subRadius;
+                
+                    var point00 = series.toGlobal({ x: x00, y: y00 });
+                    var point10 = series.toGlobal({ x: x10, y: y10 });
+                
+                    var point01 = subSeries.toGlobal({ x: x01, y: y01 });
+                    var point11 = subSeries.toGlobal({ x: x11, y: y11 });
+                
+                    line0.set("points", [point00, point01]);
+                    line1.set("points", [point10, point11]);
+                  }
+                }
+                
+                // lines
+                var line0 = container.children.push(
+                  am5.Line.new(root, {
+                    position: "absolute",
+                    stroke: root.interfaceColors.get("text"),
+                    strokeDasharray: [2, 2]
+                  })
+                );
+                var line1 = container.children.push(
+                  am5.Line.new(root, {
+                    position: "absolute",
+                    stroke: root.interfaceColors.get("text"),
+                    strokeDasharray: [2, 2]
+                  })
+                );
+                
+                // Set data
+                // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
+                series.data.setAll([
+                  {
+                    category: "Ghisoni",
+                    value: 100,
+                    subData: [
+                      { category: "Pin Lariccio", value: 93 },
+                      { category: "Autres", value: 7 }
+                    ]
+                  },
+                  {
+                    category: "Zicavo",
+                    value: 100,
+                    subData: [
+                      { category: "Hètre", value: 97 },
+                      { category: "Autres", value: 3 }
+                    ]
+                  },
+                  {
+                    category: "Corte",
+                    value: 100,
+                    subData: [
+                      { category: "Autres", value: 8 },
+                      { category: "Pin Lariccio", value: 92 }
+                    ]
+                  },
+                  {
+                    category: "Saliceto",
+                    value: 100,
+                    subData: [
+                      { category: "Pin Maritime", value: 89 },
+                      { category: "Autres", value: 11 }
+                    ]
+                  },
+                  {
+                    category: "Porto-Vecchio",
+                    value: 100,
+                    subData: [
+                      { category: "Autres", value: 39 },
+                      { category: "Pin Maritime", value: 61 }
+                    ]
+                  },
+                  {
+                    category: "San-Gavino",
+                    value: 100,
+                    subData: [
+                      { category: "Pin Lariccio", value: 64 },
+                      { category: "Autres", value: 36 }
+                    ]
+                  },
+                  {
+                    category: "Zonza",
+                    value: 100,
+                    subData: [
+                      { category: "Autres", value: 36 },
+                      { category: "Pin Lariccio", value: 64 }
+                    ]
+                  },
+                  {
+                    category: "Palneca",
+                    value: 100,
+                    subData: [
+                      { category: "Hètre", value: 54 },
+                      { category: "Autres", value: 46 }
+                    ]
+                  }
+                ]);
+                
+                function selectSlice(slice) {
+                  selectedSlice = slice;
+                  var dataItem = slice.dataItem;
+                  var dataContext = dataItem.dataContext;
+                
+                  if (dataContext) {
+                    var i = 0;
+                    subSeries.data.each(function(dataObject) {
+                      var dataObj = dataContext.subData[i];
+                      if(dataObj){
+                          if(!subSeries.dataItems[i].get("visible")){
+                              subSeries.dataItems[i].show();
+                          }
+                          subSeries.data.setIndex(i, dataObj);
+                      }
+                      else{
+                          subSeries.dataItems[i].hide();
+                      }
+                      
+                      i++;
+                    });
+                  }
+                
+                  var middleAngle = slice.get("startAngle") + slice.get("arc") / 2;
+                  var firstAngle = series.dataItems[0].get("slice").get("startAngle");
+                
+                  series.animate({
+                    key: "startAngle",
+                    to: firstAngle - middleAngle,
+                    duration: 1000,
+                    easing: am5.ease.out(am5.ease.cubic)
+                  });
+                  series.animate({
+                    key: "endAngle",
+                    to: firstAngle - middleAngle + 360,
+                    duration: 1000,
+                    easing: am5.ease.out(am5.ease.cubic)
+                  });
+                }
+                
+                container.appear(1000, 10);
+                
+                series.events.on("datavalidated", function() {
+                  selectSlice(series.slices.getIndex(0));
+                });
+                
+                }); // end am5.ready()
+                </script>
+                
+                <!-- HTML -->
+                <div id="chartdiv"></div>
+                
+
+              
+
+
+
+
+
+
+
+
+
+
+
+               <!-- Styles -->
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+    }
+    </style>
+    <h3>Graphique des m2 brulés par commune en 2020</h3>
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+        
+    am5.ready(function() {
+    
+    // Create root element
+    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+    var root = am5.Root.new("chartdiv1");
+    
+    
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([
+      am5themes_Animated.new(root)
+    ]);
+    
+    
+    // Create chart
+    // https://www.amcharts.com/docs/v5/charts/percent-charts/sliced-chart/
+    var chart = root.container.children.push(am5percent.SlicedChart.new(root, {
+      layout: root.verticalLayout
+    }));
+    
+    
+    // Create series
+    // https://www.amcharts.com/docs/v5/charts/percent-charts/sliced-chart/#Series
+    var series = chart.series.push(am5percent.PyramidSeries.new(root, {
+      orientation: "vertical",
+      valueField: "value",
+      categoryField: "category"
+    }));
+    
+    
+    // Set data
+    // https://www.amcharts.com/docs/v5/charts/percent-charts/sliced-chart/#Setting_data
+    series.data.setAll([
+      { value: 31497, category: "Corte" },
+      { value: 3031, category: "San Gavino" },
+      { value: 1532, category: "Porto Vecchio" },
+      { value: 267, category: "Zonza" },
+      { value: 150, category: "Palneca" },
+      { value: 150, category: "Ghisoni" },
+      { value: 1, category: "Saliceto" },
+      { value: 1, category: "Zicavo" }
+    ].reverse());
+    
+    
+    // Play initial series animation
+    // https://www.amcharts.com/docs/v5/concepts/animations/#Animation_of_series
+    series.appear();
+    
+    
+    // Create legend
+    // https://www.amcharts.com/docs/v5/charts/percent-charts/legend-percent-series/
+    var legend = chart.children.push(am5.Legend.new(root, {
+  centerX: am5.percent(50),
+  x: am5.percent(50),
+  marginTop: 15,
+  marginBottom: 15
+}));
+
+// Configurer les étiquettes de la légende pour afficher les valeurs réelles
+legend.labels.template.setAll({
+  textType: "value"
+});
+
+// Alimenter la légende avec les données inversées de la série
+legend.data.setAll(am5.array.copy(series.dataItems).reverse());
+
+// Faire apparaître le graphique
+chart.appear(1000, 100);
+    
+
+    
+    }); // end am5.ready()
+    </script>
+    
+    <!-- HTML -->
+   
+    <div id="chartdiv1">  </div>
+
+ 
+    <div class="legend"><p><strong> "Corte" : 31497 m2   ;   "San Gavino" : 3031 m2   ;   "Porto Vecchio" : 1532 m2   ;   "Zonza" : 267 m2   ;   "Palneca" : 150 m2   ;   "Ghisoni" : 150 m2   ;"Saliceto" : 1 m2   ;   "Zicavo" : 1 m2   ;</strong></p></div>
+    
+
+  
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<canvas id="myChart3" style="width:100%;max-width:600px;height:600px;max-height:600px;"></canvas>
+
+<script>
+const xValue = ["Pin laricio de Corse", ",Pin maritime", "Hêtre",];
+const yValue = [34945, 1533, 151, ];
+const barColor = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart3", {
+  type: "bar",
+  data: {
+    labels: xValue,
+    datasets: [{
+      backgroundColor: barColor,
+      data: yValue
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "surface en m2 parcouru par les flammes en 2020 en fonction de l'essence"
+    }
+  }
+});
+</script>
+              </div>
+              
+            
+
+         <!-- page_3 -->
+
+         <div class="conteineur_page_3">
+
+            <div class="para_1">
+                <h3>L'association</h3>
+                <p>Furesta est une association à but non lucratif qui a pour mission
+                de sensibiliser et d'informer le public sur les incendies de forêt en Corse.
+                Furesta propose un site web qui présente les incendies en fonction du type
+                 de bois en Corse.</p>
+            </div>
+
+            <div class="para_2">
+                <img src="img/Capture d'écran 2024-01-03 223559.png" alt="">
+                <p>La Corse est l'une des régions les plus touchées par les
+                incendies de forêt en France, avec plus de 2000 feux par an
+                en moyenne, et plus de 10000 hectares brûlés</p>
+            </div>
+
+            <div class="para_3">
+                <p>Les incendies de forêt ont des impacts négatifs sur la
+                biodiversité, le paysage, la qualité de l'air, le climat,
+                l'économie, et la santé humaine. Ils peuvent également entraîner
+                des pertes de vies et de biens</p>
+                <img src="img/incendie-sud_0.jpg" alt="">
+            </div>
+
+            <div class="para_4">
+                <img src="img/ahh.jpg" alt="">
+                <p>La prévention des incendies de forêt repose sur plusieurs actions,
+                comme le débroussaillement, la création de pare-feu, la surveillance,
+                la sensibilisation, et la réglementation.</p>
+            </div>
+               
+            <div class="para_5">
+                <h3>Le combat</h3>
+                <p>La lutte contre les incendies de forêt mobilise des moyens humains
+                et matériels importants, comme les pompiers, les bénévoles,
+                les avions, les hélicoptères, etc...</p>
+            </div>
+
+         </div>
+
+         <!-- page_4 -->
+
+         <div class="conteineur_page_4">
+
+            <h2>Furesta : le site qui vous éclaire sur les incendies
+             de forêt en Corse</h2>
+
+         </div>
+
+         <!-- footer -->
+
+         <div class="footer">
+            <p>© 2024 Furesta -- All Rights Reserved -- </p>
+         </div>
+
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+           // Votre code d'initialisation du graphique ici
+           am5.ready(function() {
+              // ... Votre code d'initialisation du graphique amCharts ici
+           });
+        });
+     </script>
+</body>
+</html>

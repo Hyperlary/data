@@ -1,0 +1,221 @@
+
+/* Définir les variables de couleur */
+:root {
+  --color-1: #d07e29;
+  --color-2: #e4e5e1;
+  --color-3: #bdc6ab;
+  --color-4: #458c70;
+  --color-5: #004842;
+}
+
+/* Appliquer une police de caractères générale */
+* {
+  font-family: Arial, sans-serif;
+}
+
+p{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+
+/* Styler la barre de navigation */
+.navbar {
+  background-color: var(--color-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.navbar_titre {
+  color: var(--color-2);
+  font-size: 36px;
+}
+
+/* Styler le conteneur de la page 1 */
+.conteineur_page_1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  height: 20%;
+  align-items: center;
+}
+
+/* Adapter le conteneur de la page 1 aux petits écrans */
+@media (max-width: 768px) {
+  .conteineur_page_1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Styler le texte de la page 1 */
+.texte_page_1 {
+  background-color: var(--color-2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.titre_page_1 {
+  color: var(--color-5);
+  margin-bottom: 10px;
+}
+
+.description_page_1 {
+  color: var(--color-4);
+  line-height: 1.5;
+}
+
+/* Styler l'image de la page 1 */
+.image_page_1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.image_page_1 img {
+  max-width: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styler le conteneur de la page 2 */
+.conteineur_page_2 {
+  background-color: var(--color-3);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+/* Styler le titre de la page 2 */
+.titre_page_2 {
+  color: var(--color-1);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Styler les graphiques de la page 2 */
+.graphiques {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.graphiques img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+/* Styler le conteneur de la page 3 */
+.conteineur_page_3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Adapter le conteneur de la page 3 aux petits écrans */
+@media (max-width: 768px) {
+  .conteineur_page_3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Styler les paragraphes de la page 3 */
+.para_1, .para_2, .para_3, .para_4, .para_5{
+  background-color: var(--color-2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.para_1 h3, .para_2 h3, .para_3 h3, .para_4 h3, .para_5 h3 {
+  color: var(--color-5);
+  margin-bottom: 10px;
+}
+
+.para_1 p, .para_2 p, .para_3 p, .para_4 p, .para_5 p{
+  color: var(--color-4);
+  line-height: 1.5;
+}
+/* Styler les images de la page 3 */
+.para_2 img, .para_3 img, .para_4 img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+  }
+  
+  /* Styler le conteneur de la page 4 */
+  .conteineur_page_4 {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--color-1);
+    color: var(--color-2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+ 
+  .legend{
+    width: 100%;
+ 
+  }
+   
+
+   .legend {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .legend p {
+    margin: 0;
+  }
+  
+  .legend span {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .legend span:not(:first-child) {
+    margin-left: 10px;
+  }
+  
+
+
+  /* Styler le footer */
+  .footer {
+    margin-top: 20 px;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-5);
+    color: var(--color-2);
+    width: 100%;
+    bottom: 0;
+  }
+  
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  
+  #chartdiv {
+    width: 100%;
+    height: 500px;
+  }
+
+   #chartdiv1 {
+      width: 80%;
+      height: 500px;
+    }

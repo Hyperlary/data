@@ -1,0 +1,83 @@
+﻿Forêt territoriale;Essences;% de la surface boisée en ha;commune
+COSCIONE;['Hêtre'];97.0;Zicavo
+['ROSPA-SORBA'];['Pin laricio de Corse'];93.0;Ghisoni
+['TAVIGNANO'];['Pin laricio de Corse'];92.0;Corte
+['PINETO'];['Arbousier'];9.0;Aiti, Gavignano, Saliceto
+['OSPEDALE'];['Pin laricio de Corse'];9.0;Porto-Vecchio, San-Gavino-di-Carbini, Carbini, Zonza, Conca
+['PINETO'];['Pin maritime'];89.0;Aiti, Gavignano, Saliceto
+['FANGO'];['Chêne vert'];86.0;Galéria, Manso
+['MARMANO'];['Pin maritime'];8.0;Ghisoni, Palneca
+['TARTAGINE'];['Bouleau verruqueux'];8.0;Olmi-Cappella, Pioggiola, Vallica
+['OSPEDALE'];['Chêne vert'];8.0;Porto-Vecchio, San-Gavino-di-Carbini, Carbini, Zonza, Conca
+['AÏTONE'];['Aulne vert'];8.0;Évisa, Cristinacce
+['ZONZA'];['Pin maritime'];72.0; San-Gavino-di-Carbini, Zonza
+['CHIAVARI'];['Divers'];72.0;Coti-Chiavari, Pietrosella
+['FIUMORBU'];['Aulne vert'];7.0;Isolaccio-di-Fiumorbo, San-Gavino-di-Fiumorbo, Serra-di-Fiumorbo
+['AÏTONE'];['Hêtre'];7.0;Évisa, Cristinacce
+['PUNTENIELLO'];['Sapin pectiné'];7.0;Ciamannacce, Tasso
+['AÏTONE'];['Pin laricio de Corse'];64.0;Évisa, Cristinacce
+['TARTAGINE'];['Pin laricio de Corse'];63.0;Olmi-Cappella, Pioggiola, Vallica
+['STELLA'];['Chêne vert'];63.0;Alando, Alzi, Bustanico, Cambia, Carticasi, Erbajolo, Focicchia, Giuncaggio, Lano, Noceta, Piedicorte-di-Gaggio, Pietraserena, Poggio-Marinaccio, Prato-di-Giovellina, Rusio, San-Lorenzo, Santa-Lucia-di-Mercurio, Sermano, Tralonca
+['VALDO-NIELLO'];['Pin laricio de Corse'];61.0;Asco, Castifao, Moltifao, Morosaglia, Omessa, Piedigriggio, Popolasca, Prato-di-Giovellina, Soveria
+['OSPEDALE'];['Pin maritime'];61.0;Porto-Vecchio, San-Gavino-di-Carbini, Carbini, Zonza, Conca
+['FIUMORBU'];['Divers'];6.0;Isolaccio-di-Fiumorbo, San-Gavino-di-Fiumorbo, Serra-di-Fiumorbo
+['ROSPA-SORBA'];['Sapin pectiné'];6.0;Calacuccia, Casamaccioli, Corscia, Lozzi
+['MARMANO'];['Pin laricio de Corse'];58.0;Ghisoni, Palneca
+['SANT-ANTONE'];['Hêtre'];54.0;Cozzano, Palneca
+['PUNTENIELLO'];['Hêtre'];53.0;Ciamannacce, Tasso
+['TAVIGNANO'];['Divers'];5.0; Corte, Riventosa, Santo-Pietro-di-Venaco
+['FIUMORBU'];['Pin laricio de Corse'];5.0;Isolaccio-di-Fiumorbo, San-Gavino-di-Fiumorbo, Serra-di-Fiumorbo
+['TARTAGINE'];['Pin maritime'];5.0;Olmi-Cappella, Pioggiola, Vallica
+['MARMANO'];['Bouleau verruqueux'];5.0;Ghisoni, Palneca
+['CHIAVARI'];['Aulne glutineux'];5.0;;;Coti-Chiavari, Pietrosella
+['SANT-ANTONE'];['Pin laricio de Corse'];45.0;Cozzano, Palneca
+['TARTAGINE'];['Arbousier'];4.4;Olmi-Cappella, Pioggiola, Vallica
+['VALDO-NIELLO'];['Hêtre'];4.0;Asco, Castifao, Moltifao, Morosaglia, Omessa, Piedigriggio, Popolasca, Prato-di-Giovellina, Soveria
+['MARMANO'];['Divers'];4.0;Ghisoni, Palneca
+['BAVELLA-SAMBUCU'];['Chêne vert'];4.0;Conca, Sari-Solenzara, Zonza
+['TOVA'];['Pin maritime'];36.0;Corte, Venaco
+['PUNTENIELLO'];['Divers'];36.0;Ciamannacce, Tasso
+['BAVELLA-SAMBUCU'];['Pin laricio de Corse'];35.0;Conca, Sari-Solenzara, Zonza
+['VALDO-NIELLO'];['Divers'];34.0;Asco, Castifao, Moltifao, Morosaglia, Omessa, Piedigriggio, Popolasca, Prato-di-Giovellina, Soveria
+['FIUMORBU'];['Hêtre'];34.0; Isolaccio-di-Fiumorbo, San-Gavino-di-Fiumorbo, Serra-di-Fiumorbo
+['BAVELLA-SAMBUCU'];['Arbousier'];33.0;Conca, Sari-Solenzara, Zonza
+['FIUMORBU'];['Arbousier'];30.0;Isolaccio-di-Fiumorbo, San-Gavino-di-Fiumorbo, Serra-di-Fiumorbo
+['FANGO'];['Pin maritime'];3.0;Galéria, Manso
+['ZONZA'];['Sapin pectiné'];3.0;San-Gavino-di-Carbini, Zonza
+['MARMANO'];['Aulne odorant'];3.0;Ghisoni, Palneca
+['CHIAVARI'];['Chêne liège'];3.0;Coti-Chiavari, Pietrosella
+['CHIAVARI'];['Pin maritime'];3.0;Coti-Chiavari, Pietrosella
+['BAVELLA-SAMBUCU'];['Divers'];3.0;Conca, Sari-Solenzara, Zonza
+['COSCIONE'];['Divers'];3.0;Zicavo, Aullène, Olivese
+['TOVA'];['Pin laricio de Corse'];26.0;Corte, Venaco
+['TOVA'];['Divers'];26.0;Corte, Venaco
+['ZONZA'];['Pin laricio de Corse'];24.0;San-Gavino-di-Carbini, Zonza
+['MARMANO'];['Hêtre'];21.0;Ghisoni, Palneca
+['AÏTONE'];['Divers'];21.0;Évisa, Cristinacce
+['OSPEDALE'];['Arbousier'];20.0;Porto-Vecchio, San-Gavino-di-Carbini, Carbini, Zonza, Conca
+['STELLA'];['Chêne pubescent'];20.0;Alando, Alzi, Bustanico, Cambia, Carticasi, Erbajolo, Focicchia, Giuncaggio, Lano, Noceta, Piedicorte-di-Gaggio, Pietraserena, Poggio-Marinaccio, Prato-di-Giovellina, Rusio, San-Lorenzo, Santa-Lucia-di-Mercurio, Sermano, Tralonca
+['MARMANO'];['Sapin pectiné'];2.0;Ghisoni, Palneca
+['PUNTENIELLO'];['Aulne vert'];2.0;Ciamannacce, Tasso
+['FIUMORBU'];['Chêne vert'];2.0;Isolaccio-di-Fiumorbo, San-Gavino-di-Fiumorbo, Serra-di-Fiumorbo
+['TAVIGNANO'];['Hêtre'];2.0;Corte, Riventosa, Santo-Pietro-di-Venaco
+['STELLA'];['Divers'];17.;Alando, Alzi, Bustanico, Cambia, Carticasi, Erbajolo, Focicchia, Giuncaggio, Lano, Noceta, Piedicorte-di-Gaggio, Pietraserena, Poggio-Marinaccio, Prato-di-Giovellina, Rusio, San-Lorenzo, Santa-Lucia-di-Mercurio, Sermano, Tralonca
+['TARTAGINE'];['Aulne vert'];17.0;Olmi-Cappella, Pioggiola, Vallica
+['CHIAVARI'];['Chêne vert'];17.0;Coti-Chiavari, Pietrosella
+['BAVELLA-SAMBUCU'];['Pin maritime'];15.0;Conca, Sari-Solenzara, Zonza
+['FIUMORBU'];['Pin maritime'];15.0;Isolaccio-di-Fiumorbo, San-Gavino-di-Fiumorbo, Serra-di-Fiumorbo
+['TOVA'];['Chêne vert'];14.0;Corte, Venaco
+['FANGO'];['Pin laricio de Corse'];11.0;Galéria, Manso
+['MELO'];['Pin laricio de Corse'];100.0;Calacuccia, Corscia, Corte
+['BAVELLA-SAMBUCU'];['Aulne glutineux'];10.0;Conca, Sari-Solenzara, Zonza
+['TARTAGINE'];['Chêne vert'];1.5;Olmi-Cappella, Pioggiola, Vallica
+['VALDO-NIELLO'];['Bouleau verruqueux'];1.0;Asco, Castifao, Moltifao, Morosaglia, Omessa, Piedigriggio, Popolasca, Prato-di-Giovellina, Soveria
+['PINETO'];['Cyprès Arizona'];1.0;Aiti, Gavignano, Saliceto
+['OSPEDALE'];['Divers'];1.0;Porto-Vecchio, San-Gavino-di-Carbini, Carbini, Zonza, Conca
+['ROSPA-SORBA'];['Aulne glutineux'];1.0;Calacuccia, Casamaccioli, Corscia, Lozzi
+['ZONZA'];['Divers'];1.0;San-Gavino-di-Carbini, Zonza
+['PUNTENIELLO'];['Pin laricio de Corse'];1.0;Ciamannacce, Tasso
+['TARTAGINE'];['Divers'];1.0;Olmi-Cappella, Pioggiola, Vallica
+['PINETO'];['Divers'];1.0;Aiti, Gavignano, Saliceto
+['SANT-ANTONE'];['Divers'];1.0;Cozzano, Palneca
+['OSPEDALE'];['Chêne liège'];1.0;Porto-Vecchio, San-Gavino-di-Carbini, Carbini, Zonza, Conca
+['TAVIGNANO'];['Divers'];1.0;Corte, Riventosa, Santo-Pietro-di-Venaco
